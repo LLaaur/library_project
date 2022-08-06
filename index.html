@@ -21,17 +21,33 @@
         <div class="header">
             <p>Library</p>
 
-            <div class="add">
+            <div class="add" onclick="addNewBooks()">
+
                 <button>+</button>
+
             </div>
-            
+
         </div>
 
+
+        <!-- <div class="modal">
+
+            <input type="text">
+            <input type="text">
+            <input type="number">
+
+            <div class="read-or-not">
+                <p>Have you read it?</p><input type="checkbox">
+            </div>
+
+        </div> -->
 
         <div class="grid-container">
 
             <div class="book-cards">
-                <div class="card" data-attribute="book-card"></div>
+
+                <div class="card" data-card></div>
+
             </div>
 
             
@@ -39,10 +55,13 @@
         
 
         <div class="footer">
+
             <footer></footer>
+
         </div>
 
     </div>
+    
 </body>
 
     <script src="script.js"></script>
