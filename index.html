@@ -23,7 +23,7 @@
 
             <div class="popModal">
 
-                <button>+</button>
+                <button onclick="showModal()">+</button>
 
             </div>
 
@@ -33,7 +33,13 @@
 
             <div class="book-cards">
 
-                <div class="card" data-card></div>
+                <div class="card" data-card>
+
+                    <p class="title"></p>
+                    <p class="author"></p>
+                    <p class="pages"></p>
+
+                </div>
 
             </div>
 
@@ -54,15 +60,15 @@
             
             <button class="close"  data-close onclick="closeModal()">X</button>
 
-            <input type="text">
-            <input type="text">
-            <input type="number">
+            <input type="text" data-title>
+            <input type="text" data-author>
+            <input type="number" data-pages>
 
             <div class="read-or-not">
                 <p>Have you read it?</p><input type="checkbox">
             </div>
 
-            <button class="add"  onclick="addNewBooks()">Add book</button>
+            <button class="add" data-add onclick="addBookCard()">Add book</button>
 
     </div>
 

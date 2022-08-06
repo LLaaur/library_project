@@ -90,6 +90,8 @@
 }
 
 .card{
+    display: flex;
+    flex-direction: column;
     width: 18rem;
     height: 25rem;
     background-color: rgb(231, 226, 226);
@@ -135,6 +137,7 @@
     color: ghostwhite;
     outline: none;
 }
+
 
 .read-or-not{
     display: flex;
