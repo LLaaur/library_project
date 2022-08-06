@@ -21,26 +21,13 @@
         <div class="header">
             <p>Library</p>
 
-            <div class="add" onclick="addNewBooks()">
+            <div class="popModal">
 
                 <button>+</button>
 
             </div>
 
         </div>
-
-
-        <!-- <div class="modal">
-
-            <input type="text">
-            <input type="text">
-            <input type="number">
-
-            <div class="read-or-not">
-                <p>Have you read it?</p><input type="checkbox">
-            </div>
-
-        </div> -->
 
         <div class="grid-container">
 
@@ -61,6 +48,24 @@
         </div>
 
     </div>
+
+    
+    <div class="modal" data-modal>
+            
+            <button class="close"  data-close onclick="closeModal()">X</button>
+
+            <input type="text">
+            <input type="text">
+            <input type="number">
+
+            <div class="read-or-not">
+                <p>Have you read it?</p><input type="checkbox">
+            </div>
+
+            <button class="add"  onclick="addNewBooks()">Add book</button>
+
+    </div>
+
     
 </body>
 

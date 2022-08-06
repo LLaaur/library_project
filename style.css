@@ -10,6 +10,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 
@@ -35,7 +36,7 @@
     border-bottom: 3px solid rgb(203, 152, 223);
 }
 
-.add button{
+.popModal button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +51,7 @@
     cursor: pointer;
 }
 
-.add button:hover{
+.popModal button:hover{
     animation: spin-animation 1.5s ease;
     transition: 0.5s ease;
     border: 3px dotted rgb(255, 255, 255);
@@ -74,7 +75,7 @@
     justify-content: center;
 }
 
-.add{
+.popModal{
     display: grid;
     justify-content: center;
     align-items: center;
@@ -94,10 +95,84 @@
     background-color: rgb(231, 226, 226);
     border-radius: 1rem;
     margin-left: 2rem;
+    display: none;
 }
 
 .modal{
-    background-color: ghostwhite;
-    width: 30%;
-    height: 30vh;
+    background-color: #c131ff;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    width: 18%;
+    display: flex;
+    row-gap: 1rem;
+    border-radius: 5rem;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal p{
+    font-size: 1.3rem;
+    color: ghostwhite;
+}
+
+.modal input[type='checkbox']{
+    width: 1.3rem;
+}
+
+.modal input[type='text'],
+.modal input[type='number']{
+    width: 50%;
+    border: none;
+    background-color: #c131ff;
+    border-bottom: 3px solid white;
+    font-family: 'Poppins', sans-serif;
+    color: ghostwhite;
+    outline: none;
+}
+
+.read-or-not{
+    display: flex;
+    column-gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.close{
+    width: 2rem;
+    height: 2rem;
+    background-color:ghostwhite;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    left: 35%;
+    bottom: 15%;
+    border: 3px solid transparent;
+    font-size: 1.1rem;
+}
+
+.close:hover{
+    transition: 0.5s ease;
+    border: 3px solid gray;
+}
+
+.add{
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.add:hover{
+    transition: 0.5s ease;
+    border: 3px solid gray;
 }
