@@ -36,21 +36,40 @@ function closeModal(){
 }
 
 function addBookCard(){
+
     const bookCard = document.querySelector('.book-cards');
 
     modal.style.display = 'none';
     container.style.filter = 'none';
 
-    const newCard = document.createElement('div');
-
+    let newCard = document.createElement('div');
+ 
     newCard.classList.add('card');
     newCard.style.display = 'flex';
     
     bookCard.insertAdjacentElement('beforeend', newCard);
 
-    const addBtn = document.querySelector('.add');
+    // BOOK NAME 
 
-    addBtn.addEventListener('click', function(){
+    let cardTitle = document.createElement('p');
+    cardTitle.textContent = document.querySelector('[data-title]').value;
+    newCard.appendChild(cardTitle);
 
-    })
+    // AUTHOR NAME
+
+    let cardAuthor = document.createElement('p');
+    cardAuthor.textContent = document.querySelector('[data-author]').value;
+    newCard.appendChild(cardAuthor);
+
+    // BOOK PAGES
+
+    let cardPages = document.createElement('p');
+    cardPages.textContent = document.querySelector('[data-pages]').value + ' pages';
+    newCard.appendChild(cardPages);
+
+
+
+    newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
+
+    myLibrary.push(newCard);
 }

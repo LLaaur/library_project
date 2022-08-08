@@ -94,10 +94,17 @@
     flex-direction: column;
     width: 18rem;
     height: 25rem;
-    background-color: rgb(231, 226, 226);
+    background-color: #ad6b9b;
     border-radius: 1rem;
     margin-left: 2rem;
+
     display: none;
+
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
 }
 
 .modal{
