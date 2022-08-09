@@ -2,10 +2,11 @@ let myLibrary = [];
 let newBook;
 
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title,
     this.author = author,
-    this.pages = pages
+    this.pages = pages,
+    this.read = read
 }
 
 const container = document.querySelector('.container');
@@ -62,6 +63,12 @@ function addBookCard(){
     let cardPages = document.createElement('p');
     cardPages.textContent = document.querySelector('[data-pages]').value + ' pages';
     newCard.appendChild(cardPages);
+
+    //  READ BUTTON
+    const cardButton = document.createElement('button');
+    cardButton.classList.add('read');
+    cardButton.textContent = 'Read';
+    newCard.appendChild(cardButton);
 
 
     const addBookToLibrary = () =>{

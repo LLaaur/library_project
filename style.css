@@ -90,7 +90,6 @@
 }
 
 .card{
-    display: flex;
     flex-direction: column;
     width: 18rem;
     height: 25rem;
@@ -107,7 +106,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.card p{
+.read{
+    font-family: 'Poppins', sans-serif;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.card {
     color: gold;
     text-transform: capitalize;
 }
@@ -235,7 +243,7 @@ footer{
 }
 
 .fa-github:hover{
-    animation: spin-animation 0.5s;
+    animation: spin-animation 0.7s;
     animation-timing-function: linear;
 }
 
