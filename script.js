@@ -8,12 +8,6 @@ function Book(title, author, pages) {
     this.pages = pages
 }
 
-function addBookToLibrary(){
-    newBook = new Book(title, author, pages);
-
-    myLibrary.push(newBook);
-}
-
 const container = document.querySelector('.container');
 const addModal = document.querySelector('.popModal');
 const modal = document.querySelector('[data-modal]');
@@ -36,6 +30,8 @@ function closeModal(){
 }
 
 function addBookCard(){
+
+    event.preventDefault()
 
     const bookCard = document.querySelector('.book-cards');
 
@@ -68,8 +64,10 @@ function addBookCard(){
     newCard.appendChild(cardPages);
 
 
+    const addBookToLibrary = () =>{
+        newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
+        myLibrary.push(newCard);
+    }
 
-    newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
-
-    myLibrary.push(newCard);
+    addBookToLibrary();
 }
