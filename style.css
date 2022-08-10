@@ -109,10 +109,6 @@
     text-transform: capitalize;
 }
 
-.card .close{
-    position: relative;
-    top: -18rem;
-}
 
 .read{
     font-family: 'Poppins', sans-serif;
@@ -267,9 +263,14 @@ footer{
     border-radius: 50%;
     cursor: pointer;
     position: relative;
-    top: 1rem;
+    top: -18rem;
     left: 35%;
     bottom: 15%;
     border: 3px solid transparent;
     font-size: 1.1rem;
+}
+
+.remove-card:hover{
+    border: 3px solid #c131ff;
+    transition: 0.3s ease;
 }

@@ -42,7 +42,7 @@ function addBookCard(){
     container.style.filter = 'none';
 
     let newCard = document.createElement('div');
-    newCard.setAttribute('id', myLibrary.indexOf())
+    newCard.classList.add('card');
  
     newCard.classList.add('card');
     newCard.style.display = 'flex';
@@ -82,12 +82,12 @@ function addBookCard(){
     removeCardBtn.addEventListener('click', () => {
         let cardIndex = myLibrary.findIndex((element) => this.newCard);
         myLibrary.splice(cardIndex, 1);
-
     })
 
     const addBookToLibrary = () =>{
         newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
         myLibrary.push(newCard);
+
     }
 
 
