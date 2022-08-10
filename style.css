@@ -104,6 +104,14 @@
     font-size: 1.3rem;
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
+
+    color: gold;
+    text-transform: capitalize;
+}
+
+.card .close{
+    position: relative;
+    top: -18rem;
 }
 
 .read{
@@ -113,11 +121,6 @@
     border-radius: 10px;
     font-size: 1.2rem;
     cursor: pointer;
-}
-
-.card {
-    color: gold;
-    text-transform: capitalize;
 }
 
 .modal{
@@ -254,4 +257,19 @@ footer{
     100%{
         transform: rotate(359deg);
     }
+}
+
+.remove-card{
+    width: 2rem;
+    height: 2rem;
+    background-color:ghostwhite;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: 1rem;
+    left: 35%;
+    bottom: 15%;
+    border: 3px solid transparent;
+    font-size: 1.1rem;
 }

@@ -23,12 +23,14 @@ function showModal(){
 }
 
 function closeModal(){
-    const closeBtn = document.querySelector('[data-close]');
+    let closeBtn = document.querySelector('[data-close]');
     closeBtn.addEventListener('click', function(){
         modal.style.display = 'none';
         container.style.filter = 'none';
-    })
-}
+    });
+};
+
+closeModal();
 
 function addBookCard(){
 
@@ -40,6 +42,7 @@ function addBookCard(){
     container.style.filter = 'none';
 
     let newCard = document.createElement('div');
+    newCard.setAttribute('id', myLibrary.indexOf())
  
     newCard.classList.add('card');
     newCard.style.display = 'flex';
@@ -70,11 +73,23 @@ function addBookCard(){
     cardButton.textContent = 'Read';
     newCard.appendChild(cardButton);
 
+    // REMOVE CARD BUTTON
+    const removeCardBtn = document.createElement('button');
+    removeCardBtn.classList.add('remove-card');
+    removeCardBtn.textContent = 'X';
+    newCard.appendChild(removeCardBtn);
+
+    removeCardBtn.addEventListener('click', () => {
+        let cardIndex = myLibrary.findIndex((element) => this.newCard);
+        myLibrary.splice(cardIndex, 1);
+
+    })
 
     const addBookToLibrary = () =>{
         newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
         myLibrary.push(newCard);
     }
+
 
     addBookToLibrary();
 }
