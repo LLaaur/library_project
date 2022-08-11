@@ -109,6 +109,10 @@
     text-transform: capitalize;
 }
 
+.card p{
+    text-decoration: underline;
+}
+
 
 .read{
     font-family: 'Poppins', sans-serif;
@@ -197,10 +201,6 @@ form{
     font-size: 1.1rem;
 }
 
-.close:hover{
-    transition: 0.5s ease;
-    border: 3px solid gold;
-}
 
 .add{
     font-family: 'Poppins', sans-serif;

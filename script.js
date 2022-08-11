@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.title = title,
         this.author = author,
         this.pages = pages,
-        this.read = read
+        this.read = read 
 }
 
 const container = document.querySelector('.container');
@@ -110,6 +110,7 @@ function addBookCard() {
         allBooks.forEach(books => bookCard.removeChild(books));
 
     });
+
 
     const addBookToLibrary = () => {
         newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent, cardButton.textContent);
