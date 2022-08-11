@@ -4,17 +4,16 @@ let newBook;
 
 function Book(title, author, pages, read) {
     this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
+        this.author = author,
+        this.pages = pages,
+        this.read = read
 }
 
 const container = document.querySelector('.container');
 const addModal = document.querySelector('.popModal');
 const modal = document.querySelector('[data-modal]');
 
-
-function showModal(){
+function showModal() {
     addModal.addEventListener('click', function () {
         container.style.filter = 'blur(2px)';
         modal.style.display = 'flex';
@@ -22,17 +21,17 @@ function showModal(){
     )
 }
 
-function closeModal(){
+
+function closeModal() {
     let closeBtn = document.querySelector('[data-close]');
-    closeBtn.addEventListener('click', function(){
+    closeBtn.addEventListener('click', function () {
         modal.style.display = 'none';
         container.style.filter = 'none';
     });
 };
 
-closeModal();
 
-function addBookCard(){
+function addBookCard() {
 
     event.preventDefault()
 
@@ -42,12 +41,6 @@ function addBookCard(){
     container.style.filter = 'none';
 
     let newCard = document.createElement('div');
-    newCard.classList.add('card');
- 
-    newCard.classList.add('card');
-    newCard.style.display = 'flex';
-    
-    bookCard.insertAdjacentElement('beforeend', newCard);
 
     // BOOK NAME 
 
@@ -68,9 +61,30 @@ function addBookCard(){
     newCard.appendChild(cardPages);
 
     //  READ BUTTON
-    const cardButton = document.createElement('button');
-    cardButton.classList.add('read');
-    cardButton.textContent = 'Read';
+    let cardButton = document.createElement('button');
+
+    const readCheck = document.querySelector('[data-check]');
+    if (readCheck.checked){
+        cardButton.classList.add('read');
+        cardButton.textContent = 'Read';
+        cardButton.style.background = 'lime'
+    }
+    if(readCheck.checked === false){
+        cardButton.classList.add('read');
+        cardButton.textContent = 'Not read';
+        cardButton.style.background = 'tomato';
+    }
+    cardButton.addEventListener('click', () => {
+        if (cardButton.textContent === 'Read'){
+            cardButton.style.background = 'tomato';
+            cardButton.textContent = 'Not read';
+        }
+        else if (cardButton.textContent === 'Not read'){
+            cardButton.style.background = 'lime';
+            cardButton.textContent = 'Read';
+        };
+    })
+
     newCard.appendChild(cardButton);
 
     // REMOVE CARD BUTTON
@@ -79,13 +93,26 @@ function addBookCard(){
     removeCardBtn.textContent = 'X';
     newCard.appendChild(removeCardBtn);
 
+    newCard.classList.add('card');
+
+    newCard.classList.add('card');
+    newCard.style.display = 'flex';
+
+    bookCard.appendChild(newCard);
+
+
+
     removeCardBtn.addEventListener('click', () => {
         let cardIndex = myLibrary.findIndex((element) => this.newCard);
         myLibrary.splice(cardIndex, 1);
-    })
 
-    const addBookToLibrary = () =>{
-        newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent);
+        let allBooks = bookCard.querySelectorAll('.card');
+        allBooks.forEach(books => bookCard.removeChild(books));
+
+    });
+
+    const addBookToLibrary = () => {
+        newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent, cardButton.textContent);
         myLibrary.push(newCard);
 
     }

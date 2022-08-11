@@ -36,7 +36,7 @@
 
             <div class="book-cards">
 
-                <div class="card" data-card id="card" [triggerOn]="'text-content'">
+                <div class="card" data-card id="card">
 
                     <button class="remove-card" data-remove></button>
 
@@ -78,10 +78,10 @@
                 <input type="number" name="pages" data-pages min="1" max="5000" placeholder="Number of pages" autocomplete="off" required />
 
                 <div class="read-or-not">
-                    <p>Have you read it?</p><input type="checkbox">
+                    <p>Have you read it?</p><input type="checkbox" data-check>
                 </div>
     
-                <button class="add" data-add onclick="addBookCard()">Add book</button>
+                <button class="add"  data-add onclick="addBookCard()">Add book</button>
             
             </form>
 
