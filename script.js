@@ -30,7 +30,6 @@ function closeModal() {
     });
 };
 
-
 function addBookCard() {
 
     event.preventDefault()

@@ -103,16 +103,21 @@
     justify-content: space-evenly;
     font-size: 1.3rem;
     color: rgb(0, 0, 0);
-    font-family: 'Poppins', sans-serif;
 
     color: gold;
     text-transform: capitalize;
 }
 
 .card p{
+    font-family: 'Poppins', sans-serif;
     text-decoration: underline;
+
 }
 
+.card p:nth-child(1){
+    margin-top: 5rem;
+    font-weight: 600;
+}
 
 .read{
     font-family: 'Poppins', sans-serif;
