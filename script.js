@@ -10,7 +10,7 @@ function Book(title, author, pages, read) {
 }
 
 const container = document.querySelector('.container');
-const addModal = document.querySelector('.popModal');
+const addModal = document.querySelector('.popModal button');
 const modal = document.querySelector('[data-modal]');
 
 function showModal() {
@@ -21,6 +21,8 @@ function showModal() {
     )
 }
 
+addModal.addEventListener('click', showModal)
+
 
 function closeModal() {
     let closeBtn = document.querySelector('[data-close]');
@@ -30,14 +32,19 @@ function closeModal() {
     });
 };
 
+
+let createCard = document.querySelector('.add')
+
 function addBookCard() {
 
-    event.preventDefault()
-
     const bookCard = document.querySelector('.book-cards');
+    
 
     modal.style.display = 'none';
     container.style.filter = 'none';
+
+
+    if (createCard){
 
     let newCard = document.createElement('div');
 
@@ -63,27 +70,28 @@ function addBookCard() {
     let cardButton = document.createElement('button');
 
     const readCheck = document.querySelector('[data-check]');
-    if (readCheck.checked){
+    if (readCheck.checked) {
         cardButton.classList.add('read');
         cardButton.textContent = 'Read';
         cardButton.style.background = 'lime'
     }
-    if(readCheck.checked === false){
+    if (readCheck.checked === false) {
         cardButton.classList.add('read');
         cardButton.textContent = 'Not read';
         cardButton.style.background = 'tomato';
     }
     cardButton.addEventListener('click', () => {
-        if (cardButton.textContent === 'Read'){
+        if (cardButton.textContent === 'Read') {
             cardButton.style.background = 'tomato';
             cardButton.textContent = 'Not read';
         }
-        else if (cardButton.textContent === 'Not read'){
+        else if (cardButton.textContent === 'Not read') {
             cardButton.style.background = 'lime';
             cardButton.textContent = 'Read';
         };
     })
 
+    
     newCard.appendChild(cardButton);
 
     // REMOVE CARD BUTTON
@@ -97,9 +105,6 @@ function addBookCard() {
     newCard.classList.add('card');
     newCard.style.display = 'flex';
 
-    bookCard.appendChild(newCard);
-
-
 
     removeCardBtn.addEventListener('click', () => {
         let cardIndex = myLibrary.findIndex((element) => this.newCard);
@@ -110,6 +115,8 @@ function addBookCard() {
 
     });
 
+    bookCard.appendChild(newCard);
+    
 
     const addBookToLibrary = () => {
         newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent, cardButton.textContent);
@@ -119,5 +126,8 @@ function addBookCard() {
 
 
     addBookToLibrary();
-    
+
 }
+}
+
+createCard.addEventListener('click', addBookCard);
