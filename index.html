@@ -70,7 +70,7 @@
             <button class="close"  data-close onclick="closeModal()" >X</button>
 
         
-            <form id="form" action="#" method="#" data-form hidden>
+            <form id="form" action="#" method="#" data-form onsubmit="addBookCard()">
 
                     
                 <input type="text" name="title" data-title minlength="2" maxlength="20"  placeholder="Book title" autocomplete="off" required/>
@@ -81,7 +81,7 @@
                     <p>Have you read it?</p><input type="checkbox" data-check>
                 </div>
     
-                <button type="button" class="add" data-add >Add book</button>
+                <button type="submit" class="add" data-add >Add book</button>
             
             </form>
 

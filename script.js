@@ -12,6 +12,7 @@ function Book(title, author, pages, read) {
 const container = document.querySelector('.container');
 const addModal = document.querySelector('.popModal button');
 const modal = document.querySelector('[data-modal]');
+const modalFields = document.querySelector('[data-modal] input');
 
 function showModal() {
     addModal.addEventListener('click', function () {
@@ -37,14 +38,14 @@ let createCard = document.querySelector('.add')
 
 function addBookCard() {
 
+    event.preventDefault();
+
     const bookCard = document.querySelector('.book-cards');
     
 
     modal.style.display = 'none';
     container.style.filter = 'none';
 
-
-    if (createCard){
 
     let newCard = document.createElement('div');
 
@@ -128,6 +129,3 @@ function addBookCard() {
     addBookToLibrary();
 
 }
-}
-
-createCard.addEventListener('click', addBookCard);
