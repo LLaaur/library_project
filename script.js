@@ -1,6 +1,6 @@
 let myLibrary = [];
-let newBook;
 
+// constructor
 
 function Book(title, author, pages, read) {
     this.title = title,
@@ -8,6 +8,7 @@ function Book(title, author, pages, read) {
         this.pages = pages,
         this.read = read 
 }
+
 
 const container = document.querySelector('.container');
 const addModal = document.querySelector('.popModal button');
@@ -35,6 +36,7 @@ function closeModal() {
 
 function addBookCard() {
 
+    
     event.preventDefault();
 
     const bookCard = document.querySelector('.book-cards');
@@ -89,8 +91,14 @@ function addBookCard() {
         };
     })
 
+
+    bookCard.appendChild(newCard);
     
+
+    newCard.classList.add('card');
     newCard.appendChild(cardButton);
+    newCard.style.display = 'flex';
+
 
     // REMOVE CARD BUTTON
     const removeCardBtn = document.createElement('button');
@@ -98,24 +106,21 @@ function addBookCard() {
     removeCardBtn.textContent = 'X';
     newCard.appendChild(removeCardBtn);
 
-    newCard.classList.add('card');
-
-    newCard.classList.add('card');
-    newCard.style.display = 'flex';
 
 
-    removeCardBtn.addEventListener('click', () => {
+    removeCardBtn.addEventListener('click', (e) => {
+        // remove book object from myLibrary array
         let cardIndex = myLibrary.findIndex((element) => this.newCard);
         myLibrary.splice(cardIndex, 1);
-
-        let allBooks = bookCard.querySelectorAll('.card');
-        allBooks.forEach(books => bookCard.removeChild(books));
-
+    
+        // remove card from the container
+        bookCard.removeChild(e.currentTarget.parentNode);
+        
     });
 
-    bookCard.appendChild(newCard);
     
 
+    // create new Book object and add it in the array
     const addBookToLibrary = () => {
         newCard = new Book(cardTitle.textContent, cardAuthor.textContent, cardPages.textContent, cardButton.textContent);
         myLibrary.push(newCard);
@@ -126,6 +131,8 @@ function addBookCard() {
     addBookToLibrary();
 
 }
+
+// reset form input fields so the modal does not open with previous entered content 
 
 function resetFields(){
     document.querySelector('[data-form]').reset();
