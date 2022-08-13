@@ -12,7 +12,6 @@ function Book(title, author, pages, read) {
 const container = document.querySelector('.container');
 const addModal = document.querySelector('.popModal button');
 const modal = document.querySelector('[data-modal]');
-const modalFields = document.querySelector('[data-modal] input');
 
 function showModal() {
     addModal.addEventListener('click', function () {
@@ -33,8 +32,6 @@ function closeModal() {
     });
 };
 
-
-let createCard = document.querySelector('.add')
 
 function addBookCard() {
 
@@ -128,4 +125,8 @@ function addBookCard() {
 
     addBookToLibrary();
 
+}
+
+function resetFields(){
+    document.querySelector('[data-form]').reset();
 }
