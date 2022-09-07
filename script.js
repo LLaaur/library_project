@@ -1,12 +1,16 @@
 let myLibrary = [];
 
-// constructor
+// replaced book function with class syntax
 
-function Book(title, author, pages, read) {
-    this.title = title,
-        this.author = author,
-        this.pages = pages,
-        this.read = read 
+class Book{
+
+	constructor(title, author, pages, read){
+		this.title = title,
+		this.author = author,
+		this.pages = pages,
+		this.read = read
+	}
+
 }
 
 
@@ -70,6 +74,7 @@ function addBookCard() {
     let cardButton = document.createElement('button');
 
     const readCheck = document.querySelector('[data-check]');
+
     if (readCheck.checked) {
         cardButton.classList.add('read');
         cardButton.textContent = 'Read';
@@ -80,6 +85,7 @@ function addBookCard() {
         cardButton.textContent = 'Not read';
         cardButton.style.background = 'tomato';
     }
+    
     cardButton.addEventListener('click', () => {
         if (cardButton.textContent === 'Read') {
             cardButton.style.background = 'tomato';
@@ -89,7 +95,7 @@ function addBookCard() {
             cardButton.style.background = 'lime';
             cardButton.textContent = 'Read';
         };
-    })
+    });
 
 
     bookCard.appendChild(newCard);
